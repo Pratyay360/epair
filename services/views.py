@@ -96,7 +96,6 @@ def success(request):
         )
         payload = "sender_id=IMPSMS&language=english&route=qt&numbers="+str(phone)+"&message=38038&variables={#EE#}|{#CC#}&variables_values="+name+"|"+catagory
         #model
-        # https://www.fast2sms.com/dev/quick-templates?authorization=Vn58qKqlPWdEydvR3Nivaazt8Ril0xNhlwan08zIp2HMHCVIHELQICHKlApP
         response = requests.request("POST", url, data=payload, headers=headers)
         print(response.text)
     return render(request, 'success.html')

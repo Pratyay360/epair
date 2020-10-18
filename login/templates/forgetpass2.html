@@ -1,0 +1,31 @@
+{% extends 'log.html' %}
+{% block title %} Forgot Password Otp{% endblock title %}
+
+{% block body %}
+
+
+<div class="login-dark">
+<form method="post">
+    {% csrf_token %}
+       <h2 class="sr-only">Reset Password</h2>
+            <div class="illustration"><span class="login100-form-title text-center">
+		<img src="/static/logo.png" width="200" height="200">
+		</span></div>
+    {% autoescape off %}
+        {{ message }}
+    {% endautoescape %}
+    {# Phone Number #}
+    <a>Phone No:</a>
+   <div class="form-group"> <input class="form-control" type="number" name="phoneno"  value="{{ phoneno }}" readonly></div>
+    
+    {# Otp #}
+    <a>OTP :</a>
+
+   <div class="form-group"> <input class="form-control" type="number" name="otp" placeholder="OTP" required>
+    <input type="number" class="form-control" name="step" value="2" style="display: none"></div>
+{# Button #}
+   <div class="form-group"> <button class="btn btn-primary btn-block" type="submit">Submit</button> </div>
+
+</form>
+</div>
+{% endblock body %}

@@ -1,0 +1,63 @@
+{% extends 'log.html' %}
+{% block title %}Signup {% endblock title %}
+
+{% block body %}
+
+<div class="login-dark">
+
+  <form method="POST">
+
+    {% csrf_token %}
+    {# Title #}
+    <h2 class="sr-only">Signup</h2>
+  {# First Name #}
+    <div class="form-group">
+      <label for="log_1name">First Name</label>
+      <input type="text" class="form-control" name="log_1name" placeholder="First Name" id="log_1name" required>
+    </div>
+    {# Surname Name #}
+    <div class="form-group">
+      <label for="log_sname">Surname</label>
+      <input type="text" class="form-control" name="log_sname" placeholder="Surname" id="log_sname" required>
+    </div>
+    {# Email #}
+    <div class="form-group">
+      <label for="log_email">Email address</label>
+      <input type="email" class="form-control" name="log_email" id="log_email" placeholder="example@gmail.com"
+        required>
+      <small id="emailHelp">We'll never share your email with anyone else.</small>
+    </div>
+    {# Phone Number #}
+    <div class="form-group">
+      <label for="log_phone">Phone Number</label>
+      <input type="phonenumber" class="form-control" name="log_number" id="log_number" placeholder="0123456789"
+        required>
+    </div>
+
+    {# Password #}
+    <div class="form-group">
+      <label for="log_pass">Password</label>
+      <input type="password" class="form-control" id="log_pass" name="log_pass" placeholder="********"
+        required>
+    </div>
+   {# Error Message #}
+    {% for message in messages %}
+    <div class="alert alert-danger" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+      {% autoescape off %}
+    {{ message }}
+{% endautoescape %}
+
+{# Signup Button #}
+
+    <div class="form-group"><button type="submit" style="align-content: center;" class="btn btn-primary btn-block">Signup</button></div>
+
+    {# Redirect To Login Form #}
+<a class="forgot" href="/login/login/">Login</a>
+</form>
+
+</div>
+
+{% endblock body %}

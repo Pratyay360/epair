@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}{{Service}} {% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+  <div id="contact">
+    <div class="intro">
+      <h1 style="text-align:center; font-size:30px; font-style:italic; color: azure;">Register Service For {{Service}}</h1>
+      <p style="text-align:center; color: bisque;">Submit Your Details And Describe Your Problem</p>
+    </div>
+    <div class="container">
+      <form method="POST" action="/services/success/">
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+        <div class="form-group">
+          <label for="Name" style="color: aliceblue; size: 35px;">Your Name</label>
+          <input type="text" class="form-control form-control-sm" id="name" name="name" value="{{request.user.first_name}} {{request.user.last_name}}" readonly>
+        </div>
+        <div class="form-group ">
+          <label for="Email" style="color: aliceblue; size: 35px;">Email</label>
+          <input type="email" class="form-control form-control-sm" id="email" name="email" value={{request.user.email}} readonly>
+        </div>
+        <div class="form-group ">
+          <label for="number" style="color: aliceblue; size: 35px;">Phone Number</label>
+          <input type="phonenumber" class="form-control form-control-sm" id="phone" name="phone"
+            value={{request.user.phoneno}} readonly>
+        </div>
+        <div class="form-group">
+          <label for="address" style="color: aliceblue; size: 35px;">Address </label>
+          <input type="text" class="form-control" id="address" placeholder="Address" name="address">
+        </div>
+        <div class="form-group">
+          <label for="pincode" style="color: aliceblue; size: 35px;">Pin Code </label>
+          <input type="pincode" class="form-control" id="pincode" placeholder="Pin Code" name="pincode">
+        </div>
+        <div class="form-group">
+          <input type="hidden" class="form-control" id="catagory" name="catagory" value={{Service}}>
+        </div>
+        <div class="form-group ">
+          <label for="desc" style="color: aliceblue; size: 35px;">Describe Your Problem </label>
+          <textarea class="form-control form-control-sm" id="desc" rows="3" placeholder="Describe Your Problem"
+            name="desc"></textarea>
+        </div>
+        {% endif %}
+        <div class="button">
+          <button class="btn btn-primary btn-send" type="Submit">SUBMIT</button>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

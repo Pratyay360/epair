@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock title %}
+
+{% block body %}
+    <section class="getintouch">
+        <div class="container modern-form">
+        {# Title #}
+            <div class="text-center">
+                <h4 style="color: #212529;font-size: 45px;">Contact Us</h4>
+            </div>
+            <hr class="modern-form__hr">
+            <div class="modern-form__form-container">
+                <form method="POST" action="/contact/success/">
+                    {% csrf_token %}
+                    <div class="form-row">
+                    {# Name #}
+                        <div class="col col-contact">
+                            <div class="form-group modern-form__form-group--padding-r"><input class="form-control input input-tr" id="name" name="name" type="text" placeholder="Enter Name">
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {# Email #}
+                        <div class="col col-contact">
+                            <div class="form-group modern-form__form-group--padding-r"><input class="form-control input input-tr" type="email"  id="email" name="email" placeholder="Enter Email">
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {# Phone Number #}
+                        <div class="col col-contact">
+                            <div class="form-group modern-form__form-group--padding-r"><input class="form-control input input-tr" type="text" id="phone" name="phone" placeholder="Enter Phone Number">
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {# Describe Your Problem #}
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group modern-form__form-group--padding-t"><textarea class="form-control input modern-form__form-control--textarea"id="desc" rows="3" placeholder="Describe Your Problem" name="desc"></textarea>
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {# Signup Button #}
+                    <div class="form-row">
+                        <div class="col text-center"><button class="btn btn-primary submit-now" type="submit">Submit Now</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    {% endblock body %}

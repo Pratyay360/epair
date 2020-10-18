@@ -1,0 +1,30 @@
+
+{% extends 'log.html' %}
+{% block title %}OTP Verification{% endblock title %}
+
+{% block body %}  
+{% autoescape off %}
+    {{ message }}
+{% endautoescape %}
+<!-- Start: Login Form Dark -->
+<div class="login-dark">
+    <form method="POST">
+        {% csrf_token %}
+        {# Title #}
+        <h1 style="align-content: center; size: 200%;"> Otp Verification </h1>
+        {# Phone Number #}
+        <div class="form-group"><label for="phonenumber">Phone Number</label>
+        <input type="text" name="phonenumber" placeholder="Phone Number" class="form-control" value="{{ phoneno }}" readonly><br></div>
+        {# Enter Otp #}
+        <div class="form-group">
+        <label for="otp">OTP</label>
+        <input type="text" name="otp" class="form-control" required placeholder="Enter OTP">
+        <br><hr>
+    </div>
+        {# Submit Button #}
+       <div class="form-group"> <button type="submit">Let's Go</button>
+ 
+       </div>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block title %}Register Form {% endblock title %}
+
+{% block body %}
+<section class="getintouch">
+  <div class="container modern-form">
+    <div class="container">
+      {# Title #}
+      <div class="text-center">
+        <h4 style="color: #212529;font-size: 45px;">Register As A Mechanic</h4>
+      </div>
+
+      <hr class="modern-form__hr">
+      <div class="modern-form__form-container">
+        <form method="POST">
+          {% csrf_token %}
+          {# row 1 #}
+          <div class="form-row">
+
+            {# First Name #}
+            <div class="col col-contact">
+              <div class="form-group modern-form__form-group--padding-r">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control input input-tr" name="fname" placeholder="Enter Name" id="name" required>
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+
+            {# Last Name #}
+            <div class="col col-contact">
+              <div class="form-group modern-form__form-group--padding-r">
+                <label for="name">Last Name</label>
+                <input type="text" class="form-control input input-tr" name="lname" placeholder="Enter Name" id="name" required>
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+
+            {# Email #}
+            <div class="col col-contact">
+              <div class="form-group modern-form__form-group--padding-r">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control input input-tr" name="email" id="email" placeholder="example@gmail.com"
+                  required>
+                <small id="emailHelp">We'll never share your email with anyone else.</small>
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+
+            {# row end #}
+          </div>
+          {# row 2 #}
+          <div class="form-row">
+            {# Phone Number #}
+            <div class="col col-contact">
+              <div class="form-group modern-form__form-group--padding-r">
+                <label for="phone_number">Phone Number</label>
+                <input type="number" class="form-control input input-tr" name="phone_number" id="phone_number" placeholder="0123456789"
+                  required>
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+
+            {# pincode #}
+            <div class="col col-contact">
+              <div class="form-group modern-form__form-group--padding-r">
+                <label for="log_pin">Postal Code</label>
+                <input type="number" class="form-control input input-tr" name="pincode" id="pincode" placeholder="123456" required>
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+            {# Address #}
+            <div class="col col-contact">
+              <div class="form-group modern-form__form-group--padding-r">
+                <label for="address">Address </label>
+                <textarea class="form-control input modern-form__form-control--textarea" id="address" rows="2" placeholder="Enter Your Work Address"
+                  name="address" required></textarea>
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+            {# row end #}
+          </div>
+
+          {# row 3 #}
+          <div class="form-row">
+
+
+
+            {# Catagory #}
+            <div class="col col-contact">
+            <div class="form-group modern-form__form-group--padding-r">
+              <label for="catagory">Select Your Category</label>
+              <select class="form-control input input-tr" id="catagory" name="catagory" required>
+                <option value="ac">Ac</option>
+                <option value="fridge">Fridge</option>
+                <option value="television">Television</option>
+                <option value="computer">Computer</option>
+                <option value="laptop">Laptop</option>
+                <option value="phone">Phone</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="electrical">Electrical</option>
+                <option value="electrician">Electrician</option>
+                <option value="carpenter">Carpenter</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+            </div>
+
+
+
+            {# Password #}
+            <div class="col col-contact">
+            <div class="form-group modern-form__form-group--padding-r">
+              <label for="password">Password</label>
+              <input type="password" class="form-control input input-tr" name="password" id="password" required>
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+            </div>
+
+
+
+            {# row end #}
+          </div>
+
+          {# Error message #}
+          {% autoescape off %}
+          {{ message }}
+          {% endautoescape %}
+          {# Button #}
+          <div class="form-row">
+            <div class="col text-center">
+          <button type="Submit" style="align-content: center;" class="btn btn-primary submit-now">Register As A Mechanic</button>
+
+            </div></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}

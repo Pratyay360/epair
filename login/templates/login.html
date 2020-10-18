@@ -1,0 +1,34 @@
+{% extends 'log.html' %}
+{% block title %}Login {% endblock title %}
+
+{% block body %}
+
+{# Start: Login Form Dark #}
+<div class="login-dark">
+    {# Title #}
+    <div class="from-group">
+    <h2 class="sr-only" style="color: aliceblue;  visibility: visible;">Login</h2></div>
+
+    <form method="POST">
+
+        {% csrf_token %}
+        <div class="illustration"><i class="icon ion-ios-locked-outline" style="filter: blur(0px);"></i></div>
+        {# Email #}
+        <div class="form-group"><input class="form-control" type="email" name="log_email" id="log_email"
+                placeholder="Email" required></div>
+
+                {# Password #}
+        <div class="form-group"><input class="form-control" type="password" name="log_pass" id="log_pass"
+                placeholder="Password" required></div>
+        {# Error Message #}
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+        {# Button  #}
+        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+        <a class="forgot" href="/login/forget/">Forgot your password?</a>
+    </form>
+</div>
+{% endblock body %}

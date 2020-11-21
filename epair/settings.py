@@ -18,6 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+#change security key
+''' Change Security key '''
 SECRET_KEY = '6v@yep7zq$dj+85$d+-ezpdys7%ac8#g8f_50phf^a7h5sl8*='
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -132,7 +134,8 @@ AUTH_USER_MODEL = 'login.CustomUser'
 url = "https://www.fast2sms.com/dev/bulk"
 
 headers = {
-    'authorization': "Vn58qKqlPWdEydvR3Nivaazt8Ril0xNhlwan08zIp2HMHCVIHELQICHKlApP",
+    ''' fast 2 sms api  '''
+    'authorization': "###########################################",
     'Cache-Control': "no-cache",
     'Content-Type': "application/x-www-form-urlencoded"
     }

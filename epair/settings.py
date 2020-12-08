@@ -135,7 +135,7 @@ url = "https://www.fast2sms.com/dev/bulk"
 
 headers = {
     ''' fast 2 sms api  '''
-    'authorization': "###########################################",
+    'authorization': "Vn58qKqlPWdEydvR3Nivaazt8Ril0xNhlwan08zIp2HMHCVIHELQICHKlApP",
     'Cache-Control': "no-cache",
     'Content-Type': "application/x-www-form-urlencoded"
     }

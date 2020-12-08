@@ -1,1 +1,1 @@
-web: gunicorn djangoherokuapp.wsgi
+web: gunicorn epair91.wsgi

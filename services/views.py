@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import services, Message
+from .models import services
 from django.utils import timezone
 from django.contrib import auth
 from django.http import HttpResponse, request
-from epair.settings import url,headers
 import requests
 import json
 import random
@@ -90,14 +89,6 @@ def success(request):
        
         Form = services(name=name, email=email, phone=phone, address=address, pincode=pincode, desc=desc, catagory=catagory, date=timezone.now())
         Form.save()
-        Message.objects.create(
-            phone=phone
-            
-        )
-        payload = "sender_id=IMPSMS&language=english&route=qt&numbers="+str(phone)+"&message=38038&variables={#EE#}|{#CC#}&variables_values="+name+"|"+catagory
-        #model
-        response = requests.request("POST", url, data=payload, headers=headers)
-        print(response.text)
     return render(request, 'success.html')
 
 

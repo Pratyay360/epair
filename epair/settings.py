@@ -132,14 +132,4 @@ STATICFILES_DIRS = [
 ]
 
 AUTH_USER_MODEL = 'login.CustomUser'
-
-# Fast2sms API Configuration
-url = "https://www.fast2sms.com/dev/bulk"
-
-headers = {
-    ''' fast 2 sms api  '''
-    'authorization': "Vn58qKqlPWdEydvR3Nivaazt8Ril0xNhlwan08zIp2HMHCVIHELQICHKlApP",
-    'Cache-Control': "no-cache",
-    'Content-Type': "application/x-www-form-urlencoded"
-    }
 django_heroku.settings(locals())

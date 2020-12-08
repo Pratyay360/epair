@@ -16,7 +16,3 @@ class services(models.Model):
     def __str__(self):
         return self.pincode
     
-
-class Message(models.Model):
-    phone=models.BigIntegerField(null=True)
-    message=models.TextField(max_length=200,default=0)

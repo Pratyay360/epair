@@ -30,21 +30,3 @@ class MechanicProfile(models.Model):
 
     def __str__(self):
         return (self.category) 
-
-#Otp Model
-class OTP(models.Model):
-    phoneno=models.BigIntegerField(null=True)
-    otp=models.BigIntegerField(null=True,default=0)
-
-    
-    def __str__(self):
-        return str(self.phoneno)
-
-
-class OtpDirectory(models.Model):
-    phoneno=models.BigIntegerField(null=True)
-    otp=models.BigIntegerField(null=True,default=0)
-
-    
-    def __str__(self):
-        return str(self.phoneno)

@@ -10,9 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
 #For Deployment
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +25,7 @@ SECRET_KEY = '6v@yep7zq$dj+85$d+-ezpdys7%ac8#g8f_50phf^a7h5sl8*='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['epair91.herokuapp.com']
+ALLOWED_HOSTS = ['epair91.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -47,7 +44,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,7 +128,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
     '/var/www/static/',
 ]
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 AUTH_USER_MODEL = 'login.CustomUser'
 
 # Fast2sms API Configuration

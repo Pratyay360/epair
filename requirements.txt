@@ -25,7 +25,7 @@ pytz==2020.4
 PyYAML==5.3.1
 requests==2.31.0
 rsa==4.6
-six==1.15.0
+six==1.16.0
 sqlparse==0.4.4
 typing-extensions==3.7.4.3
 typing-inspect==0.6.0

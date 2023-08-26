@@ -1,0 +1,26 @@
+name: Auto Merge Pull Requests
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Schedule to run daily at midnight
+
+jobs:
+  merge_pull_requests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Merge pull requests
+      run: |
+        # Set the username of the user whose pull requests you want to merge
+        USER_TO_MERGE=dependabot
+        
+        # Get list of open pull requests by the user
+        PR_LIST=$(gh pr list --state open --author $USER_TO_MERGE -q '.number' -R Pratyay360/epair)
+        
+        # Loop through each pull request and merge
+        for PR_NUMBER in $PR_LIST; do
+          gh pr merge $PR_NUMBER -R Pratyay360/epair
+        done
